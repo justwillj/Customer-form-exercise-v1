@@ -1,6 +1,7 @@
 import Input from "../input/Input";
 import "./App.css";
 import { useState } from "react";
+import ErrorMessage from "../errorMessage/ErrorMessage";
 
 const App = () => {
   const [name, setName] = useState("");
@@ -12,7 +13,7 @@ const App = () => {
   const validEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
 
   //Toggles the errors
-  const [nameError, setNameError] = useState(false);
+  const [nameError, setNameError] = useState(true);
   const [emailError, setEmailError] = useState(false);
   const [zipCodeError, setZipCodeError] = useState(false);
 
@@ -51,10 +52,9 @@ const App = () => {
   return (
     <div>
       <h1>Customer form </h1>
-      <form onSubmit={formCheck}>
-        <label>Name:</label>
-        {nameError ? <p>Must be at least 3 characters</p> : null}
-        <input type="text" value={name} onChange={inputOnChangeName}></input>
+
+      <form onSubmit={formCheck} noValidate>
+        <Input type="text" label="hello" />
 
         <label>Email:</label>
         {emailError ? <p>Must be a valid email</p> : null}

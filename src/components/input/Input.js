@@ -1,8 +1,15 @@
 import React from "react";
-const Input = ({ type }) => {
+const Input = ({ label, type, value, onChange }) => (
   <div>
-    <label>hello</label>
-    <input type={type} />;
-  </div>;
-};
+    <label htmlFor={label}>{label}</label>
+    <input
+      type={type}
+      id={label}
+      name={label}
+      value={value}
+      onChange={onChange}
+    />
+  </div>
+);
+
 export default Input;
