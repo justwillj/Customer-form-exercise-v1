@@ -23,8 +23,15 @@ const App = () => {
       event.preventDefault();
     }
 
-    if (!email.match(validEmail && email.length === 0)) {
+    //Handles the email check
+    if (!email.match(validEmail) && email.length === 0) {
       setEmailError(true);
+      event.preventDefault();
+    }
+
+    //Handles the zip code check
+    if (!/^\d{5}(-\d{4})?$/.test(zipCode) && zipCode.length === 0) {
+      setZipCodeError(true);
       event.preventDefault();
     }
   };
