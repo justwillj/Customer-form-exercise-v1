@@ -25,7 +25,7 @@ const App = () => {
     }
 
     //Handles the email check
-    if (!email.match(validEmail) && email.length === 0) {
+    if (!email.match(validEmail)) {
       setEmailError(true);
       event.preventDefault();
     }
@@ -74,7 +74,7 @@ const App = () => {
           type="number"
           value={zipCode}
           onChange={inputOnChangeZipCode}
-          placeholder="Zip Code"
+          placeholder="Zip Code:"
         />
 
         <input className="button-28" type="submit"></input>
