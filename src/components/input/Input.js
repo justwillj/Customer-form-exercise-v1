@@ -1,5 +1,6 @@
 import React from "react";
-const Input = ({ label, type, value, onChange }) => (
+import "./Input.css";
+const Input = ({ label, type, value, onChange, placeholder }) => (
   <div>
     <label htmlFor={label}>{label}</label>
     <input
@@ -8,6 +9,7 @@ const Input = ({ label, type, value, onChange }) => (
       name={label}
       value={value}
       onChange={onChange}
+      placeholder={placeholder}
     />
   </div>
 );

@@ -13,7 +13,7 @@ const App = () => {
   const validEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
 
   //Toggles the errors
-  const [nameError, setNameError] = useState(true);
+  const [nameError, setNameError] = useState(false);
   const [emailError, setEmailError] = useState(false);
   const [zipCodeError, setZipCodeError] = useState(false);
 
@@ -50,25 +50,34 @@ const App = () => {
   };
 
   return (
-    <div>
-      <h1>Customer form </h1>
-
+    <div className="main">
+      <h1>Customer Form </h1>
       <form onSubmit={formCheck} noValidate>
-        <Input type="text" label="hello" />
+        {nameError ? <p>Must be 3 characters</p> : null}
+        <Input
+          type="text"
+          value={name}
+          onChange={inputOnChangeName}
+          placeholder="Name:"
+        />
 
-        <label>Email:</label>
         {emailError ? <p>Must be a valid email</p> : null}
-        <input type="email" value={email} onChange={inputOnChangeEmail}></input>
+        <Input
+          type="email"
+          value={email}
+          onChange={inputOnChangeEmail}
+          placeholder="Email:"
+        />
 
-        <label>Zip Code:</label>
         {zipCodeError ? <p>Must be a valid zip code</p> : null}
-        <input
+        <Input
           type="number"
           value={zipCode}
           onChange={inputOnChangeZipCode}
-        ></input>
+          placeholder="Zip Code"
+        />
 
-        <input type="submit"></input>
+        <input className="button-28" type="submit"></input>
       </form>
     </div>
   );
