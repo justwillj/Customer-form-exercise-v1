@@ -2,6 +2,7 @@ import Input from "../input/Input";
 import "./App.css";
 import { useState } from "react";
 import ErrorMessage from "../errorMessage/ErrorMessage";
+import Modal from "../modal/Modal";
 
 const App = () => {
   const [name, setName] = useState("");
@@ -16,6 +17,8 @@ const App = () => {
   const [nameError, setNameError] = useState(false);
   const [emailError, setEmailError] = useState(false);
   const [zipCodeError, setZipCodeError] = useState(false);
+
+  const [loggedIn, setLoggedIn] = useState(true);
 
   const formCheck = (event) => {
     //Handles the name check
@@ -51,6 +54,7 @@ const App = () => {
 
   return (
     <div className="main">
+      {loggedIn ? <Modal name={name} /> : null}
       <h1>Customer Form </h1>
       <form onSubmit={formCheck} noValidate>
         <Input
