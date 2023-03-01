@@ -53,31 +53,37 @@ const App = () => {
     <div className="main">
       <h1>Customer Form </h1>
       <form onSubmit={formCheck} noValidate>
-        {nameError ? <p>Must be 3 characters</p> : null}
         <Input
+          label="Name:"
           type="text"
           value={name}
           onChange={inputOnChangeName}
-          placeholder="Name:"
+          placeholder="e.g. John Smith"
+          className={nameError ? "input-error" : null}
         />
+        {nameError ? <p>Must be at least 3 characters</p> : null}
 
-        {emailError ? <p>Must be a valid email</p> : null}
         <Input
+          label="Email:"
           type="email"
           value={email}
           onChange={inputOnChangeEmail}
-          placeholder="Email:"
+          placeholder="e.g. johnsmith@gmail.com"
+          className={emailError ? "input-error" : null}
         />
+        {emailError ? <p>Must be a valid email</p> : null}
 
-        {zipCodeError ? <p>Must be a valid zip code</p> : null}
         <Input
+          label="Zip Code:"
           type="number"
           value={zipCode}
           onChange={inputOnChangeZipCode}
-          placeholder="Zip Code:"
+          placeholder="e.g. 29712"
+          className={zipCodeError ? "input-error" : null}
         />
+        {zipCodeError ? <p>Must be a valid zip code</p> : null}
 
-        <input className="button-28" type="submit"></input>
+        <input className="btn-submit" type="submit"></input>
       </form>
     </div>
   );

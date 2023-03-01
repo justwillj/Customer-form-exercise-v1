@@ -1,6 +1,6 @@
 import React from "react";
 import "./Input.css";
-const Input = ({ label, type, value, onChange, placeholder }) => (
+const Input = ({ label, type, value, onChange, placeholder, className }) => (
   <div>
     <label htmlFor={label}>{label}</label>
     <input
@@ -10,7 +10,9 @@ const Input = ({ label, type, value, onChange, placeholder }) => (
       value={value}
       onChange={onChange}
       placeholder={placeholder}
+      className={className}
     />
+    <span class="focus-border"></span>
   </div>
 );
 
