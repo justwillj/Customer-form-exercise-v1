@@ -1,11 +1,14 @@
+
 .modal {
     box-shadow: 0 1px 4px rgba(0, 0, 0, 2);
     border-radius: 6px;
-    background-color: rgba(235, 222, 222);
+    background: rgb(255, 255, 255)
+    linear-gradient(22deg, rgb(187, 240, 240), rgb(134, 189, 243), rgb(247, 140, 197)) fixed;
+
     padding: 1rem;
     text-align: center;
-    height: 30rem;
-    width: 40rem;
+    height: 28rem;
+    width: 45rem;
     z-index: 10;
     position: absolute;
     top: 20vh;
@@ -13,6 +16,7 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    
   }
 
   button {
@@ -28,7 +32,7 @@
     font-size: 16px;
     font-weight: 600;
     line-height: normal;
-    margin: 0;
+    margin-top: 4.5rem;
     min-height: 60px;
     min-width: 0;
     outline: none;

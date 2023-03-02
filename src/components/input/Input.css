@@ -4,22 +4,22 @@ input {
   border-radius: 8px;
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   background-color: rgb(236, 236, 236);
-
+  box-shadow: 3px 3px rgba(0, 0, 0, 0.3);
 }
 input[type="text"] {
   font-size: 24px;
 }
 input[type="text"]:focus {
-    outline: 2px solid green;
-     border: 1.5px solid green;
+    outline: 2px solid rgb(44, 107, 243);
+    border: 2px solid rgb(44, 107, 243);
   }
 
 input[type="email"] {
   font-size: 24px;
 }
 input[type="email"]:focus {
-    outline: 2px solid green;
-     border: 1.5px solid green;
+    outline: 2px solid rgb(44, 107, 243);
+    border: 3px solid rgb(44, 107, 243);
   }
 
 input[type="number"] {
@@ -27,8 +27,8 @@ input[type="number"] {
 }
 
 input[type="number"]:focus {
-    outline: 2px solid green;
-     border: 1.5px solid green;
+    outline: 2px solid rgb(44, 107, 243);
+    border: 2px solid rgb(44, 107, 243);
   }
 div {
   padding: 1rem;
