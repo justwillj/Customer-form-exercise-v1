@@ -4,6 +4,7 @@ import { useState } from "react";
 import Modal from "../modal/Modal";
 
 const App = () => {
+  /*CODE REVIEW: when you have multiple state variables that are related, like name and nameError, consolidate them into 1 state object variable */
   //Holds onto the name value
   const [name, setName] = useState("");
 
@@ -38,6 +39,7 @@ const App = () => {
       setNameError(false);
     }
 
+    /*CODE REVIEW: these validation checks can be pulled out into a helper file so that they don't bog down our app component. */
     //Handles the email check
     if (!email.match(validEmail)) {
       setEmailError(true);
@@ -57,6 +59,7 @@ const App = () => {
     }
 
     // //Displays the modal with a successful login
+    /*CODE REVIEW: instead of rechecking the validation, keep track of a local variable that you check at the end of your validation. That way you're not running validation twice */
     if (
       name.length >= 3 &&
       email.match(validEmail) &&
@@ -70,6 +73,10 @@ const App = () => {
     }
   };
 
+/**
+ * CODE REVIEW: instead of having 3 different functions for the inputs that are doing the exact same
+ *  thing, remember we can use switch statements. 
+ */
   /**
    * Sets the value of name to whatever is in name input field
    * @param {onChange} e - updates the value when the input value changes
